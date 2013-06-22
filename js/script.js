@@ -23,3 +23,21 @@ peps.fetch(
         alert("read failed");
     }
 );
+
+var getText = function() {
+	var text = $('.message').val();
+	console.log(text);
+	return text;
+}
+
+var updateCountdown = function() {
+    // 140 is the max message length
+    var remaining = 140 - $('.message').val().length;
+    $('.countdown').text(remaining + '/140');
+}
+
+$(document).ready(function($) {
+    updateCountdown();
+    $('.message').change(updateCountdown);
+    $('.message').keyup(updateCountdown);
+});
