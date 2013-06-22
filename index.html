@@ -10,12 +10,15 @@
 	
 	<title>Pep Roulette</title>
 	<script src="js/jquery-2.0.2.min.js"></script>
+	<script src="js/usergrid.min.js" type="text/javascript"></script>
+	<script src="js/script.js"></script>
 	<link rel="stylesheet" href="style.css">
-
 </head>
+
 <body>
+
 <h2>Get Pep</h2>
-<p>Be the pet you wish to see in the world</p>
+<p id="pep"></p>
 <p>Shake to get more pep</p>
 <h2>Give Pep</h2>
 <textarea maxlength="140"></textarea>
@@ -44,18 +47,19 @@
 			</div>
 		</div>
 	</div>
+
 	<script src="js/swipe.js"></script>
 	<script> //window.mySwipe = Swipe(document.getElementById('slider'));
-	window.mySwipe = new Swipe(document.getElementById('slider'), {
-  startSlide: 2,
-  speed: 400,
-  //auto: 3000,
-  continuous: true,
-  disableScroll: false,
-  stopPropagation: false,
-  callback: function(index, elem) {},
-  transitionEnd: function(index, elem) {}
-});
+		window.mySwipe = new Swipe(document.getElementById('slider'), {
+			startSlide: 2,
+			speed: 400,
+			//auto: 3000,
+			continuous: true,
+			disableScroll: false,
+			stopPropagation: false,
+			callback: function(index, elem) {},
+			transitionEnd: function(index, elem) {}
+	});
 
 	</script>
 </body>
