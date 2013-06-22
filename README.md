@@ -8,5 +8,5 @@ An App to Give and Get 140 character pep talks on categories like friendship, pe
 
 Contributors
 -----------
-melakelly
-brendajin
+*melakelly
+*brendajin
