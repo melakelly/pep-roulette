@@ -23,7 +23,7 @@
 <h2>Give</h2>
 <textarea class="message" maxlength="140" rows="2" cols="30"></textarea>
 <p class="countdown"></p>
-<button>Give</button>
+<button id="give">Give</button>
 
 	Category: <div id="slider" class="swipe">
 		<div class="swipe-wrap">
@@ -60,7 +60,13 @@
 			callback: function(index, elem) {},
 			transitionEnd: function(index, elem) {}
 	});
-
+	$('#give').bind('click',function() {
+		//grab the pep text
+		var text = $('.message').val();
+		console.log(text);
+		//clear the entry
+		$('.message').val('');
+	});
 	</script>
 </body>
 </html>

@@ -24,20 +24,20 @@ peps.fetch(
     }
 );
 
-var getText = function() {
+App.getText = function() {
 	var text = $('.message').val();
 	console.log(text);
 	return text;
 }
 
-var updateCountdown = function() {
+App.updateCountdown = function() {
     // 140 is the max message length
     var remaining = 140 - $('.message').val().length;
     $('.countdown').text(remaining + '/140');
 }
 
 $(document).ready(function($) {
-    updateCountdown();
-    $('.message').change(updateCountdown);
-    $('.message').keyup(updateCountdown);
+    App.updateCountdown();
+    $('.message').change(App.updateCountdown);
+    $('.message').keyup(App.updateCountdown);
 });
