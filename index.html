@@ -62,7 +62,9 @@
 
 	<script src="js/swipe.js"></script>
 	<script> //window.mySwipe = Swipe(document.getElementById('slider'));
-		window.mySwipe = new Swipe(document.getElementById('slider'), {
+		this.App = this.App || {};
+
+		App.mySwipe = new Swipe(document.getElementById('slider'), {
 			startSlide: 2,
 			speed: 400,
 			//auto: 3000,
@@ -71,14 +73,26 @@
 			stopPropagation: false,
 			callback: function(index, elem) {},
 			transitionEnd: function(index, elem) {}
-	});
-	$('#give').bind('click',function() {
-		//grab the pep text
-		var text = $('.message').val();
-		console.log(text);
-		//clear the entry
-		$('.message').val('');
-	});
+		});
+		//array of categories
+		App.categories = [
+			"family",
+			"pets",
+			"work",
+			"tech",
+			"love",
+			"friends"];
+
+		//event handlers for give functionality
+		$('#give').bind('click',function() {
+			//grab the pep text
+			var cat = App.categories[App.mySwipe.getPos()];
+			var text = $('.message').val();
+			console.log(text);
+			console.log(cat);
+			//clear the entry
+			$('.message').val('');
+		});
 	</script>
 </body>
 </html>
