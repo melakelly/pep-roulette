@@ -74,23 +74,24 @@
 			callback: function(index, elem) {},
 			transitionEnd: function(index, elem) {}
 		});
-		//array of categories
-		App.categories = [
-			"family",
-			"pets",
-			"work",
-			"tech",
-			"love",
-			"friends"];
 
 		//event handlers for give functionality
 		$('#give').bind('click',function() {
+
+			//grab the current category
+			var category = App.getCategory();
+			console.log(category);
+
 			//grab the pep text
-			var cat = App.categories[App.mySwipe.getPos()];
-			var text = $('.message').val();
+			var text = App.getText();
 			console.log(text);
-			console.log(cat);
-			//clear the entry
+
+			//set an empty rating
+			var rating = 0;
+			
+			//send to Apigee
+
+			//clear the entry if successful
 			$('.message').val('');
 		});
 	</script>

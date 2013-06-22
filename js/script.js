@@ -4,6 +4,40 @@ App.showPep = function(data) {
 	$('#pep').html(data);
 }
 
+App.getText = function() {
+	var text = $('.message').val();
+	return text;
+}
+
+App.updateCountdown = function() {
+    // 140 is the max message length
+    var remaining = 140 - $('.message').val().length;
+    $('.countdown').text(remaining + '/140');
+}
+
+//array of categories
+App.categories = [
+	"family",
+	"pets",
+	"work",
+	"tech",
+	"love",
+	"friends"
+];
+
+App.getCategory = function() {
+	var category = App.categories[App.mySwipe.getPos()];
+	return category;
+}
+
+
+$(document).ready(function($) {
+    App.updateCountdown();
+    $('.message').change(App.updateCountdown);
+    $('.message').keyup(App.updateCountdown);
+});
+
+//Apigee methods
 var client = new Usergrid.Client({
     orgName:'cyberneticlove', // Your Usergrid organization name (or apigee.com username for App Services)
     appName:'sandbox' // Your Usergrid app name
@@ -23,21 +57,3 @@ peps.fetch(
         alert("read failed");
     }
 );
-
-App.getText = function() {
-	var text = $('.message').val();
-	console.log(text);
-	return text;
-}
-
-App.updateCountdown = function() {
-    // 140 is the max message length
-    var remaining = 140 - $('.message').val().length;
-    $('.countdown').text(remaining + '/140');
-}
-
-$(document).ready(function($) {
-    App.updateCountdown();
-    $('.message').change(App.updateCountdown);
-    $('.message').keyup(App.updateCountdown);
-});
