@@ -1,3 +1,13 @@
+body {
+	background-color: lightgrey;
+	font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+	margin:0;
+}
+.center {
+	display: block;
+	margin-right: auto;
+	margin-left: auto;
+}
 .swipe {
   overflow: hidden;
   visibility: hidden;
@@ -11,4 +21,30 @@
   float:left;
   width:100%;
   position: relative;
+}
+#choose {
+	width: 100%;
+	float: left;
+	margin-top: -10px;
+	margin-left: 9px;
+}
+#slider {
+	width:80%;
+	float:left;
+	margin-top: -10px;
+}
+#button {
+	width:20%;
+	color:white;
+	height:100%;
+	float:left;
+	margin-top: -30px;
+}
+#button img {
+	width:auto;
+	height: 54px;
+}
+.header {
+	background-color: white;
+	height: 86px;
 }
