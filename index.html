@@ -1,3 +1,19 @@
+<!doctype html>
+<!--[if lt IE 7 ]> <html lang="en" class="no-js ie6"> <![endif]-->
+<!--[if IE 7 ]>    <html lang="en" class="no-js ie7"> <![endif]-->
+<!--[if IE 8 ]>    <html lang="en" class="no-js ie8"> <![endif]-->
+<!--[if IE 9 ]>    <html lang="en" class="no-js ie9"> <![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!--> <html lang="en" class="no-js"> <!--<![endif]-->
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	
+	<title>Pep Roulette</title>
+	<script src="js/jquery-2.0.2.min.js"></script>
+	<link rel="stylesheet" href="style.css">
+
+</head>
+<body>
 <h2>Get Pep</h2>
 <p>Be the pet you wish to see in the world</p>
 <p>Shake to get more pep</p>
@@ -5,3 +21,42 @@
 <textarea maxlength="140"></textarea>
 <p>0/140</p>
 <button>Give</button>
+
+<div id="slider" class="swipe">
+		<div class="swipe-wrap">
+			<div>
+				<img src="images/family.jpg" alt=""/>
+			</div>
+			<div>
+				<img src="images/pets.jpg" alt=""/>
+			</div>
+			<div>
+				<img src="images/work.jpg" alt=""/>
+			</div>
+			<div>
+				<img src="images/tech.jpg" alt=""/>
+			</div>
+			<div>
+				<img src="images/love.jpg" alt=""/>
+			</div>
+			<div>
+				<img src="images/friends.jpg" alt=""/>
+			</div>
+		</div>
+	</div>
+	<script src="js/swipe.js"></script>
+	<script> //window.mySwipe = Swipe(document.getElementById('slider'));
+	window.mySwipe = new Swipe(document.getElementById('slider'), {
+  startSlide: 2,
+  speed: 400,
+  //auto: 3000,
+  continuous: true,
+  disableScroll: false,
+  stopPropagation: false,
+  callback: function(index, elem) {},
+  transitionEnd: function(index, elem) {}
+});
+
+	</script>
+</body>
+</html>
