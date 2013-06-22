@@ -63,7 +63,9 @@
 
 	<script src="js/swipe.js"></script>
 	<script> //window.mySwipe = Swipe(document.getElementById('slider'));
-		window.mySwipe = new Swipe(document.getElementById('slider'), {
+		this.App = this.App || {};
+
+		App.mySwipe = new Swipe(document.getElementById('slider'), {
 			startSlide: 2,
 			speed: 400,
 			//auto: 3000,
@@ -72,14 +74,27 @@
 			stopPropagation: false,
 			callback: function(index, elem) {},
 			transitionEnd: function(index, elem) {}
-	});
-	$('#give').bind('click',function() {
-		//grab the pep text
-		var text = $('.message').val();
-		console.log(text);
-		//clear the entry
-		$('.message').val('');
-	});
+		});
+
+		//event handlers for give functionality
+		$('#give').bind('click',function() {
+
+			//grab the current category
+			var category = App.getCategory();
+			console.log(category);
+
+			//grab the pep text
+			var text = App.getText();
+			console.log(text);
+
+			//set an empty rating
+			var rating = 0;
+			
+			//send to Apigee
+
+			//clear the entry if successful
+			$('.message').val('');
+		});
 	</script>
 </body>
 </html>
