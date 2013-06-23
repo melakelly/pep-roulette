@@ -9,14 +9,15 @@ var cmAttr = 'Map data &copy; 2011 OpenStreetMap contributors, Imagery &copy; 20
 
 var minimal   = L.tileLayer(cmUrl, {
 	styleId: 22677, 
-	attribution: cmAttr, 
+	// attribution: cmAttr, 
 	maxZoom:15
 	// minZoom:8
 	});
 
 minimal.addTo(Map);
 
-Map.locate({setView: true, maxZoom: 16});
+
+Map.locate({setView: true, maxZoom: 15,minZoom:13});
 
 
 function onLocationFound(e) {

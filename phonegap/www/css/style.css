@@ -88,6 +88,10 @@ textarea {
 }
 
 #give {
+
+}
+
+.red-button {
 	margin:0;
 	float: right;
 	padding: 0 12px;
@@ -100,4 +104,16 @@ textarea {
 }
 #map { 
 	height: 500px;
+}
+
+.footer {
+	position:fixed;
+	bottom: 0;
+	width: 100%;
+	background-color: rgba(0, 0, 0, 0.6);
+}
+
+.footer img{
+	width: 5em;
+	padding: .3em;
 }
