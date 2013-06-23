@@ -70,6 +70,8 @@ App.newPep = function(cat, text, rating) {
          	console.log("write succeeded"); 
          }
 	});
+
+	App.fetch(cat);
 }
 
 

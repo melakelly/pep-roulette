@@ -4,17 +4,27 @@ var app = express();
 var http = require('http');
 var server	= http.createServer(app);
 
-app.use(express.logger());
+app.configure(function(){
+	app.use(express.logger());
 
-app.get('/', function(request, response) {
-  response.send('Hello World!');
+	app.use(express.static(process.env.PWD + '/public'));
+	app.set('views', process.env.PWD + "/views");
+	app.set('view engine', 'jade');
+	app.engine('jade', require('jade').__express);
+
+	app.use(express.bodyParser());
+
+	app.use(express.favicon(process.env.PWD + '/public/favicon.ico'));
+	
+	app.use(express.cookieParser());
 });
 
-app.get('/hello.txt', function(req, res){
-  var body = 'Hello World';
-  res.setHeader('Content-Type', 'text/plain');
-  res.setHeader('Content-Length', body.length);
-  res.end(body);
+// app.get('/', function(request, response) {
+//   response.send('Hello World!');
+// });
+
+app.get('/', function(req, res) {
+	res.render('index');
 });
 
 var port = process.env.PORT || 3000;
