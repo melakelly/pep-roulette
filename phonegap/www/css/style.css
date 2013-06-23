@@ -98,3 +98,6 @@ textarea {
 	height: 44px;
 	font-family: Helvetica;
 }
+#map { 
+	height: 480px;
+}
