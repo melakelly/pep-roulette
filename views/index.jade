@@ -21,9 +21,14 @@ block content
         span.countdown
         button#give Give
     hr
-    img.download(src='/images/android_badge.png')
-    #custom-tweet
-      a.twitter-share-button(href='https://twitter.com/share', data-lang='en', data-url='http://peproulette.herokuapp.com', data-hashtags='peproulette',data-text='I give pep') Tweet peproulette
+    .download
+      a(href="/download")
+       img(src='/images/android_badge.png')
+      #custom-tweet
+        a.twitter-share-button(href='https://twitter.com/share', data-lang='en', data-url='http://peproulette.herokuapp.com', data-hashtags='peproulette',data-text='I give pep') Tweet peproulette
+    hr
+    p
+      .caption A project by @cyberneticlove and @melisskelly
 
 
   script(src='javascripts/script2.js')
