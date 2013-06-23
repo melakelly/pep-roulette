@@ -28,7 +28,7 @@ app.get('/', function(req, res) {
 });
 
 app.get('/download',function(req,res) {
-	res.download(process.env.PWD + '/public/peproulette.apk');
+	res.download(process.env.PWD + '/public/peproulette0.0.1.apk');
 });
 
 var port = process.env.PORT || 3000;
