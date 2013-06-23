@@ -12,14 +12,16 @@ $('#give').bind('click',function() {
 	//set an empty rating
 	var rating = 0;
 	
-	//send to Apigee
-	App.newPep(cat,text,rating);
 
-	// refresh
-	// App.fetch(cat);
-	App.updateCountdown();
-	//clear the entry if successful
-	$('.message').val('');
+	//send to Apigee
+	if(text) {
+		App.newPep(cat,text,rating);
+		// refresh
+		// App.fetch(cat);
+		App.updateCountdown();
+		//clear the entry if successful
+		$('.message').val('');	
+	}
 });
 
 
