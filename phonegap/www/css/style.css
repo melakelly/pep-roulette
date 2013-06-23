@@ -9,6 +9,12 @@ body {
 p {
 	font-size: .8em;
 }
+
+a{
+	color:#851c16;
+	text-decoration: none;
+	font-weight: bold;
+}
 .center {
 	width: 25%;
 }
@@ -42,11 +48,7 @@ p {
 	text-align: right;
 	margin-right: 0;
 }
-#button a{
-	color:#851c16;
-	text-decoration: none;
-	font-weight: bold;
-}
+
 p {
 	font-size: 1em;
 }
@@ -116,4 +118,8 @@ textarea {
 .footer img{
 	width: 5em;
 	padding: .3em;
+}
+
+.footer a{
+	color:white;
 }
