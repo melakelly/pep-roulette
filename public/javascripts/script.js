@@ -12,7 +12,6 @@ var peps = new Usergrid.Collection({ "client":client, "type":"peps" });
 
 //pepRoulette methods
 App.showPep = function(data) {
-	console.log(data[0].pep);
 	
 	var pepString = '';
 
@@ -65,13 +64,13 @@ App.newPep = function(cat, text, rating) {
 
 	peps.addEntity(pep, function(error,response) {
          if (error) {
-         	console.log("write failed");
+         	console.log("Something went wrong...try again later?");
          } else { 
-         	console.log("write succeeded"); 
+         	alert("Thanks for the pep!"); 
          }
 	});
 
-	App.fetch(cat);
+	// App.fetch(cat);
 }
 
 
@@ -83,7 +82,6 @@ App.getCategory = function() {
 			var cat = $('a')[i].id;
 		}
 	}
-	console.log(cat);
 	return cat;
 }
 
