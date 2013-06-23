@@ -15,7 +15,7 @@ var minimal   = L.tileLayer(cmUrl, {
 minimal.addTo(Map);
 
 Map.attributionControl.setPrefix('');
-Map.locate({setView: true, maxZoom: 15,minZoom:13});
+Map.locate({setView: true, maxZoom: 13, minZoom:8});
 
 
 function onLocationFound(e) {
@@ -33,7 +33,7 @@ Map.on('locationfound', onLocationFound);
 
 function onLocationError(e) {
     alert(e.message);
-    Map.setView([37.7750, -122.4183], 13);
+    Map.setView([37.7750, -122.4183], 10);
 }
 
 
