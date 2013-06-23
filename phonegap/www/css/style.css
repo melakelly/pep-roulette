@@ -32,22 +32,18 @@ body {
 	margin-left: 9px;
 }
 #slider {
-	width:80%;
-	float:left;
+	width:100%;
 	margin-top: -10px;
 }
 #button {
-	width: 20%;
-	background-color: black;
-	height: 85px;
-	float: left;
-	margin-top: -40px;
+	width: 99%;
+	margin-top: 0px;
+	text-align: right;
 }
-#button img {
-	width: auto;
-	height: 40px;
-	padding-top: 17px;
-	padding-left: 10%;
+#button a{
+	color:#851c16;
+	text-decoration: none;
+	font-weight: bold;
 }
 .header {
 	margin-top:10px;
