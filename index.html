@@ -10,7 +10,7 @@
 	
 	<title>Pep Roulette</title>
 	<script src="js/jquery-2.0.2.min.js"></script>
-	<script src="js/usergrid.min.js" type="text/javascript"></script>
+	<script src="js/usergrid.0.10.5.js" type="text/javascript"></script>
 	<script src="js/script.js"></script>
 	<link rel="stylesheet" href="style.css">
 </head>
@@ -53,7 +53,7 @@
 	<div class="talk-pep" style="clear:both">
 		<h2>Get</h2>
 		<p id="pep"></p>
-		<p>Shake to get more pep</p>
+		<!-- <p>Shake to get more pep</p> -->
 		<hr></hr>
 		<h2>Give</h2>
 		<textarea class="message" maxlength="140" rows="2" cols="30"></textarea>
@@ -72,7 +72,10 @@
 			continuous: true,
 			disableScroll: false,
 			stopPropagation: false,
-			callback: function(index, elem) {},
+			callback: function(index, elem) {
+				console.log('index: '+index);
+				App.fetch(App.categories[index]);
+			},
 			transitionEnd: function(index, elem) {}
 		});
 
@@ -80,21 +83,31 @@
 		$('#give').bind('click',function() {
 
 			//grab the current category
-			var category = App.getCategory();
-			console.log(category);
+			var cat = App.getCategory();
 
 			//grab the pep text
 			var text = App.getText();
-			console.log(text);
 
 			//set an empty rating
 			var rating = 0;
 			
 			//send to Apigee
+			App.newPep(cat,text,rating);
 
 			//clear the entry if successful
 			$('.message').val('');
 		});
+
+
+
+		$(document).ready(function($) {
+			App.updateCountdown();
+			$('.message').change(App.updateCountdown);
+			$('.message').keyup(App.updateCountdown);
+
+			App.fetch('work');
+		});
+
 	</script>
 </body>
 </html>

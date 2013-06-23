@@ -1,5 +1,16 @@
 this.App = this.App || {};
 
+//Apigee methods
+var client = new Usergrid.Client({
+    orgName:'cyberneticlove', // Your Usergrid organization name (or apigee.com username for App Services)
+    appName:'sandbox' // Your Usergrid app name
+});
+
+// Reading data
+var peps = new Usergrid.Collection({ "client":client, "type":"peps" });
+
+
+//pepRoulette methods
 App.showPep = function(data) {
 	$('#pep').html(data);
 }
@@ -25,35 +36,49 @@ App.categories = [
 	"friends"
 ];
 
+App.newPep = function(cat, text, rating) {
+
+	var pep = {
+		"category": cat,
+		"pep": text,
+		"rating": rating
+	};
+
+	peps.addEntity(pep, function(error,response) {
+         if (error) {
+         	console.log("write failed");
+         } else { 
+         	console.log("write succeeded"); 
+         }
+	});
+}
+
+
 App.getCategory = function() {
 	var category = App.categories[App.mySwipe.getPos()];
 	return category;
 }
 
+App.fetch = function(cat) {
+	var ql = "select * where category = " + '\'' + cat + '\'';
 
-$(document).ready(function($) {
-    App.updateCountdown();
-    $('.message').change(App.updateCountdown);
-    $('.message').keyup(App.updateCountdown);
-});
+	var options = { 
+	   method:'GET', 
+	   endpoint:'peps',
+	   qs: {
+	   	'ql': ql
+	   }
+	}; 
 
-//Apigee methods
-var client = new Usergrid.Client({
-    orgName:'cyberneticlove', // Your Usergrid organization name (or apigee.com username for App Services)
-    appName:'sandbox' // Your Usergrid app name
-});
+	client.request(options, function (err, data) { 
+	   if (err) { 
+	      console.log(err);//error 
+	   } else { 
+	      console.log(data.entities[0].pep);//success — data will contain raw results from API call 
 
-// Reading data
-var peps = new Usergrid.Collection({ "client":client, "type":"peps" });
+	      App.showPep(data.entities[0].pep);
+	   } 
+	});	
 
-peps.fetch(
-    function() { // Success
-    	var pep = peps.getNextEntity()
-        var pepText = pep.get("pep"); // Output the first pep
+}
 
-		App.showPep(pepText);
-
-    }, function() { // Failure
-        alert("read failed");
-    }
-);
