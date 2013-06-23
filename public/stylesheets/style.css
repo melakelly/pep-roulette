@@ -6,15 +6,16 @@ body {
 }
 p{
 }
-button {
+a {
 	margin:2%;
 	padding: 10px 10px;
 	float: left;
-	width:46%;
+	width:41%;
 	background-color: white;
 	color: #851c16;
 	border: none;
 	font-size: 1.2em;
+	text-align: center;
 	font-family: Helvetica;
 }
 
@@ -51,6 +52,7 @@ button {
 #choose {
 	width: 100%;
 	float: left;
+	text-decoration: none;
 }
 
 #slider {
