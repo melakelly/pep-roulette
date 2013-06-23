@@ -16,21 +16,6 @@ var minimal   = L.tileLayer(cmUrl, {
 
 minimal.addTo(Map);
 
-
-// function onLocationFound(e) {
-//     // Map.locate({setView: true, maxZoom: 13});
-// 	console.log('locationfound');
-// }
-
-// Map.on('locationfound', onLocationFound);
-
-// function onLocationError(e) {
-// 	console.log(e.message);
-//     // Map = L.map('map').setView([37.7750, -122.4183], 13);
-// }
-
-// Map.on('locationerror', onLocationError);
-
 var circle1 = L.circle([
 37.78724,-122.399034], 100, {
     color: '#851c16',
