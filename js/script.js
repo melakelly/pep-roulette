@@ -81,7 +81,7 @@ App.getCategory = function() {
 }
 
 App.fetch = function(cat) {
-	var ql = "select * where category = " + '\'' + cat + '\'';
+	var ql = "select * where category = " + '\'' + cat + '\''+' order by created desc';
 
 	var options = { 
 	   method:'GET', 
