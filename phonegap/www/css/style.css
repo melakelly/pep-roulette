@@ -18,6 +18,12 @@ a{
 .center {
 	width: 25%;
 }
+.right {
+	padding:0.3em;
+	position:absolute;
+    bottom:0;
+    right:0;
+}
 .swipe {
   overflow: hidden;
   visibility: hidden;
