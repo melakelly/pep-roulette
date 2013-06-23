@@ -76,8 +76,15 @@ App.newPep = function(cat, text, rating) {
 
 
 App.getCategory = function() {
-	var category = App.categories[App.mySwipe.getPos()];
-	return category;
+	var cat = '';
+
+	for (var i = 0; i < $('a').length; i++) {
+		if($('a')[i].classList.contains('selected')){
+			var cat = $('a')[i].id;
+		}
+	}
+	console.log(cat);
+	return cat;
 }
 
 App.fetch = function(cat) {
