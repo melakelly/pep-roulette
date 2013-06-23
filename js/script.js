@@ -28,7 +28,7 @@ App.updateCountdown = function() {
 
 //array of categories
 App.categories = [
-		
+	"family",
 	"pets",
 	"work",
 	"tech",
@@ -71,12 +71,13 @@ App.fetch = function(cat) {
 	}; 
 
 	client.request(options, function (err, data) { 
-	   if (err) { 
-	      console.log(err);//error 
-	   } else { 
-	      console.log(data.entities[0].pep);//success — data will contain raw results from API call 
+		if (err) { 
+			console.log(err);//error 
+		} else { 
 
-	      App.showPep(data.entities[0].pep);
+			console.log(data.entities[0].pep);//success — data will contain raw results from API call 
+
+			App.showPep(data.entities[0].pep);
 	   } 
 	});	
 

@@ -52,7 +52,13 @@
 	</div>
 	<div class="talk-pep" style="clear:both">
 		<h2>Get</h2>
-		<p id="pep"></p>
+		<div id="peps" class="swipe">
+			<div class="swipe-wrap">
+				<div>
+					<p id="pep"></p>
+				</div>
+			</div>
+		</div>
 		<!-- <p>Shake to get more pep</p> -->
 		<hr></hr>
 		<h2>Give</h2>
@@ -82,7 +88,22 @@
 			},
 			transitionEnd: function(index, elem) {}
 		});
+		
+		App.pepSwipe = new Swipe(document.getElementById('peps'), {
+			startSlide: 0,
+			speed: 400,
+			//auto: 3000,
+			continuous: true,
+			disableScroll: false,
+			stopPropagation: false,
+			callback: function(index, elem) {
+				console.log('index: '+index);
+				App.fetch(App.categories[index]);
+			},
+			transitionEnd: function(index, elem) {}
+		});
 
+		
 		//event handlers for give functionality
 		$('#give').bind('click',function() {
 
@@ -101,8 +122,6 @@
 			//clear the entry if successful
 			$('.message').val('');
 		});
-
-
 
 		$(document).ready(function($) {
 			App.updateCountdown();
