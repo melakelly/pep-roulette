@@ -19,8 +19,6 @@ App.showPep = function(data) {
 	for (i in data) {
 		pepString+='<div><p>'+data[i].pep+'</p></div>';
 	}
-
-
 	$('#peps').html(pepString);
 
 
@@ -72,6 +70,8 @@ App.newPep = function(cat, text, rating) {
          	console.log("write succeeded"); 
          }
 	});
+
+	App.fetch(cat);
 }
 
 
