@@ -28,7 +28,7 @@ App.updateCountdown = function() {
 
 //array of categories
 App.categories = [
-	"family",
+		
 	"pets",
 	"work",
 	"tech",
