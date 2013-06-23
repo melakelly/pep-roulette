@@ -27,7 +27,7 @@ App.showPep = function(data) {
 	App.pepSwipe = new Swipe(document.getElementById('pepswipe'), {
 		startSlide: 0,
 		speed: 400,
-		auto: 3000,
+		// auto: 3000,
 		continuous: true,
 		disableScroll: false,
 		stopPropagation: false,
