@@ -18,7 +18,15 @@ a {
 	text-align: center;
 	font-family: Helvetica;
 }
+.download {
+	margin:auto;
+	width: 50%;
+	padding: 10px 0;
+}
 
+.download img {
+	margin: 10px 0;
+}
 .selected {
 	background-color: #851c16;
 	color:white;
@@ -67,7 +75,7 @@ a {
 }
 .talk-pep p{
 	padding-top:15px;
-
+	padding-bottom: 10px
 }
 .talk-pep h2 {
 	color:#851c16;
@@ -92,7 +100,7 @@ textarea {
 }
 
 .give-footer {
-	padding: 10px 0;
+	padding: 5px 0 27px 0;
 	width: 100%;
 }
 
@@ -113,7 +121,6 @@ textarea {
 }
 
 #custom-tweet {
-	margin-top: -3px;
 }
 @media (max-width: 760px) {
 	.container {

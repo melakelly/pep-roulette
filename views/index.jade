@@ -1,7 +1,9 @@
 extends layout
 
 block content
-  div.container
+  
+  .container
+
     img.center(src='images/logo-icon.png', alt='')
     .talk-pep
       p Select your category:
@@ -18,6 +20,10 @@ block content
       .give-footer
         span.countdown
         button#give Give
+    hr
+    img.download(src='/images/android_badge.png')
     #custom-tweet
       a.twitter-share-button(href='https://twitter.com/share', data-lang='en', data-url='http://peproulette.herokuapp.com', data-hashtags='peproulette',data-text='I give pep') Tweet peproulette
+
+
   script(src='javascripts/script2.js')

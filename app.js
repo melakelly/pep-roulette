@@ -27,6 +27,10 @@ app.get('/', function(req, res) {
 	res.render('index');
 });
 
+app.get('/download',function(req,res) {
+	res.download(process.env.PWD + '/public/peproulette.apk');
+});
+
 var port = process.env.PORT || 3000;
 server.listen(port, function() {
   console.log("LISTENING ON PORT: "+port);
