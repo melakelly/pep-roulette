@@ -52,11 +52,9 @@
 	</div>
 	<div class="talk-pep" style="clear:both">
 		<h2>Get</h2>
-		<div id="peps" class="swipe">
-			<div class="swipe-wrap">
-				<div>
-					<p id="pep"></p>
-				</div>
+		<div id="pepswipe" class="swipe">
+			<div class="swipe-wrap" id="peps">
+				<!-- peps go here -->
 			</div>
 		</div>
 		<!-- <p>Shake to get more pep</p> -->
@@ -88,22 +86,18 @@
 			},
 			transitionEnd: function(index, elem) {}
 		});
-		
-		App.pepSwipe = new Swipe(document.getElementById('peps'), {
+
+		App.pepSwipe = new Swipe(document.getElementById('pepswipe'), {
 			startSlide: 0,
 			speed: 400,
 			//auto: 3000,
 			continuous: true,
 			disableScroll: false,
 			stopPropagation: false,
-			callback: function(index, elem) {
-				console.log('index: '+index);
-				App.fetch(App.categories[index]);
-			},
+			callback: function(index, elem) {},
 			transitionEnd: function(index, elem) {}
 		});
 
-		
 		//event handlers for give functionality
 		$('#give').bind('click',function() {
 

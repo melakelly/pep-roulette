@@ -12,7 +12,28 @@ var peps = new Usergrid.Collection({ "client":client, "type":"peps" });
 
 //pepRoulette methods
 App.showPep = function(data) {
-	$('#pep').html(data);
+	console.log(data[0].pep);
+	
+	var pepString = '';
+
+	for (i in data) {
+		pepString+='<div><p>'+data[i].pep+'</p></div>';
+	}
+
+
+	$('#peps').html(pepString);
+
+
+	App.pepSwipe = new Swipe(document.getElementById('pepswipe'), {
+		startSlide: 0,
+		speed: 400,
+		auto: 3000,
+		continuous: true,
+		disableScroll: false,
+		stopPropagation: false,
+		callback: function(index, elem) {},
+		transitionEnd: function(index, elem) {}
+	});
 }
 
 App.getText = function() {
@@ -71,14 +92,11 @@ App.fetch = function(cat) {
 	}; 
 
 	client.request(options, function (err, data) { 
-		if (err) { 
-			console.log(err);//error 
-		} else { 
-
-			console.log(data.entities[0].pep);//success — data will contain raw results from API call 
-
-			App.showPep(data.entities[0].pep);
-	   } 
+		if (err) { //error 
+			console.log(err);
+		} else { //success — data will contain raw results from API call 
+			App.showPep(data.entities);
+		} 
 	});	
 
 }
