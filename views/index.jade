@@ -3,28 +3,17 @@ extends layout
 block content
   div.container
     img.center(src='images/logo-icon.png', alt='')
-    .header
-      #choose
-        p Select your category:
-      #slider.swipe
-        .swipe-wrap
-          div
-            img(src='images/family.jpg', alt='')
-          div
-            img(src='images/pets.jpg', alt='')
-          div
-            img(src='images/work.jpg', alt='')
-          div
-            img(src='images/tech.jpg', alt='')
-          div
-            img(src='images/love.jpg', alt='')
-          div
-            img(src='images/friends.jpg', alt='')
-      #button
-        a(href='#')
-          img(src='images/map.png', alt='')
-    .talk-pep(style='clear: both;')
-      h2 Give
+    .talk-pep
+      p Select your category:
+    #choose
+      button family
+      button pets
+      button work
+      button tech
+      button love
+      button friends
+    .talk-pep
+      p(style='clear:both') Give your pep:
       textarea.message(maxlength='140', rows='2', cols='30')
       .give-footer
         span.countdown
