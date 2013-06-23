@@ -12,13 +12,15 @@ var peps = new Usergrid.Collection({ "client":client, "type":"peps" });
 
 //pepRoulette methods
 App.showPep = function(data) {
-	console.log(data[0].pep);
-	
+
 	var pepString = '';
 
 	for (i in data) {
+		console.log(data[i]);
+
 		pepString+='<div><p>'+data[i].pep+'</p></div>';
 	}
+
 	$('#peps').html(pepString);
 
 
@@ -86,7 +88,7 @@ App.fetch = function(cat) {
 	   endpoint:'peps',
 	   qs: {
 	   	'ql': ql
-	   }
+	   },
 	}; 
 
 	client.request(options, function (err, data) { 
