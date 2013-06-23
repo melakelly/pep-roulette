@@ -4,19 +4,17 @@ var Map = L.map('map');
 
 // var Map = L.map('map').setView([37.7750, -122.4183], 13);
 
-var cmAttr = 'Map data &copy; 2011 OpenStreetMap contributors, Imagery &copy; 2011 CloudMade',
-	cmUrl = 'http://{s}.tile.cloudmade.com/51c0f5a1659d402ab930cdb5fa2a0f73/{styleId}/256/{z}/{x}/{y}.png';
+var cmUrl = 'http://{s}.tile.cloudmade.com/51c0f5a1659d402ab930cdb5fa2a0f73/{styleId}/256/{z}/{x}/{y}.png';
 
 var minimal   = L.tileLayer(cmUrl, {
 	styleId: 22677, 
-	// attribution: cmAttr, 
 	maxZoom:15
 	// minZoom:8
 	});
 
 minimal.addTo(Map);
 
-
+Map.attributionControl.setPrefix('');
 Map.locate({setView: true, maxZoom: 15,minZoom:13});
 
 
