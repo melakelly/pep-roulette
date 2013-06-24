@@ -1,8 +1,9 @@
 pep-roulette
 ============
 Version 0.0.1 
-Android Download [version 0.0.1](http://peproulette.herokuapp.com/download "Android Download")
-Website [version 0.0.1](http://peproulette.herokuapp.com/ "Website")
+
+* [Download Android Version 0.0.1](http://peproulette.herokuapp.com/download "Android Download")
+* [PepRoulette Website](http://peproulette.herokuapp.com/ "Website")
 
 Description
 -----------
