@@ -15,7 +15,7 @@ App.showPep = function(data) {
 
 	var pepString = '';
 
-	for (i = 0; i < data.length; i++) {
+	for (i = 0; i < 5; i++) {
 		console.log(data[i]);
 
 		pepString+='<div><p>'+data[i].pep+'</p></div>';
