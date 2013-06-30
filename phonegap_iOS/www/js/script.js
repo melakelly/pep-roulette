@@ -67,6 +67,7 @@ App.newPep = function(cat, text, rating) {
 
 	peps.addEntity(pep, function(error,response) {
          if (error) {
+         	alert('Whoops, something failed. Please try again later.')
          	console.log("write failed");
          } else { 
 			App.fetch(cat);
