@@ -12,10 +12,10 @@
 	<script src="js/jquery-2.0.2.min.js"></script>
 	<script src="js/usergrid.0.10.5.js" type="text/javascript"></script>
 	<script src="js/swipe.js"></script>
-	<script src="cordova.js"></script>
 	<script src="js/script.js"></script>
 	<link rel="stylesheet" href="css/index.css">
 	<link rel="stylesheet" href="css/style.css">
+	<script src="cordova.js"></script>
 </head>
 
 <body>
@@ -71,6 +71,15 @@
 
 	
 	<script>
+
+
+		document.addEventListener("deviceready", onDeviceReady, false);
+		
+		function onDeviceReady() {
+			console.log('navigator ready');
+		    navigator.splashscreen.hide();
+		}
+
 		this.App = this.App || {};
 
 		App.mySwipe = new Swipe(document.getElementById('slider'), {
@@ -92,13 +101,13 @@
 
 			//grab the current category
 			var cat = App.getCategory();
-
+			console.log(cat);
 			//grab the pep text
 			var text = App.getText();
-
+			console.log(text);
 			//set an empty rating
 			var rating = 0;
-			
+			console.log(rating);
 			//send to Apigee
 			App.newPep(cat,text,rating);
 

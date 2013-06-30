@@ -30,7 +30,7 @@ public class example extends DroidGap
         super.onCreate(savedInstanceState);
         // Set by <content src="index.html" /> in config.xml
         super.setIntegerProperty("splashscreen", R.drawable.splash);
-        //super.loadUrl("file:///android_asset/www/index.html", 10000);
+        //super.loadUrl("file:///android_asset/www/index.html", 1000);
         super.loadUrl(Config.getStartUrl());
         //super.loadUrl("file:///android_asset/www/index.html")
     }
