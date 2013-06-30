@@ -15,7 +15,7 @@ App.showPep = function(data) {
 
 	var pepString = '';
 
-	for (i in data) {
+	for (i = 0; i < data.length; i++) {
 		console.log(data[i]);
 
 		pepString+='<div><p>'+data[i].pep+'</p></div>';
@@ -69,6 +69,7 @@ App.newPep = function(cat, text, rating) {
          if (error) {
          	console.log("write failed");
          } else { 
+			App.fetch(cat);
          	console.log("write succeeded"); 
          }
 	});
@@ -81,14 +82,14 @@ App.getCategory = function() {
 }
 
 App.fetch = function(cat) {
-	var ql = "select * where category = " + '\'' + cat + '\''+' order by created desc';
+	var ql = "select * where category=" + '\'' + cat + '\''+' & order by created desc';
 
 	var options = { 
 	   method:'GET', 
 	   endpoint:'peps',
 	   qs: {
 	   	'ql': ql,
-	   	'limit':5
+	   	'limit':10
 	   }
 	}; 
 
